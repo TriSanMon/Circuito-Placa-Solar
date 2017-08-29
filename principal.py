@@ -19,7 +19,7 @@ espera_amp_fotoresist = 60 #Intervalo entre lecturas de datos
 #amperios_carga
 
 def ordenar (lista_aparatos)
-	sorted(lista_aparatos, key=operator.attrgetter("espera"))
+	sorted(lista_aparatos, key = operator.attrgetter("espera"))
 
 def actualizar (tiempo)
 	tiempo = time.time() - inicio
@@ -59,28 +59,32 @@ actualizar(i)
 while i < lista_aparatos[3].espera:
 
 	if i < lista_aparatos[0].espera:
-		lista_aparatos[0].medir(medida)
+		lista_aparatos[0].actualizar_medida(self.medida)
+		lista_aparatos[0].medir(lista_aparatos[0].medida)
 		time.sleep(lista_aparatos[0].espera)
 		j += lista_aparatos[0].espera
 
 	actualizar(i) 
 
 	if i < lista_aparatos[1].espera:
-	    lista_aparatos[1].medir(medida)
+		lista_aparatos[1].actualizar_medida(self.medida)
+	    lista_aparatos[1].medir(lista_aparatos[1].medida)
 		time.sleep(lista_aparatos[1].espera - j)
 		j += lista_aparatos[1].espera
 
 	actualizar(i) 
 
 	if i < lista_aparatos[2].espera:
-	    lista_aparatos[2].medir(medida)
+		lista_aparatos[2].actualizar_medida(self.medida)
+	    lista_aparatos[2].medir(lista_aparatos[2].medida)
 		time.sleep(lista_aparatos[2].espera - j)
 		j += lista_aparatos[2].espera
 
 	actualizar(i) 
 
 	if i < lista_aparatos[3].espera:
-	    lista_aparatos[3].medir(medida)
+		lista_aparatos[3].actualizar_medida(self.medida)
+	    lista_aparatos[3].medir(lista_aparatos[3].medida)
 		time.sleep(lista_aparatos[3].espera - j)
 		j = 0
 
