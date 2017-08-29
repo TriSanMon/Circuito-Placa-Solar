@@ -48,7 +48,7 @@ while i < periodo
 		volt_placa.medir(voltios_placa)
 		amp_placa.medir(amperios_placa)
 		amp_fotoresist.medir(amperios_fotoresist)
-		amp_carga.medir(amperios_carga)
+		amp_carga.medir(amperios_carga * volt_carga) # Se obtiene la potencia directamente
 
 		time.sleep(espera)
 
